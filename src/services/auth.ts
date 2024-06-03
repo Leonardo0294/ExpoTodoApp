@@ -8,8 +8,8 @@ const USER_LIST: AuthData[] = [
     },
     {
         username: 'Leonardo',
-        email: 'fabilez123@gmail',
-        password: 'fabi@'
+        email: 'leo@live.com',
+        password: 'Leonardo@'
     }
 ];
 

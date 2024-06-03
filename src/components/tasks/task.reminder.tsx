@@ -1,6 +1,6 @@
 import React from "react";
 import { View, ViewStyle, Text } from "react-native";
-import { Avatar, Button, IconButton, TouchableRipple, useTheme } from "react-native-paper";
+import { Button, IconButton, TouchableRipple, useTheme } from "react-native-paper";
 import { ScaledSheet } from "react-native-size-matters";
 import { baseStyles } from "../base-styles";
 import { Task } from "@/interfaces/task";
@@ -21,8 +21,13 @@ export default function TaskReminder(props: {
         styles.hero,
         {
           minHeight: props.size === "big" ? 240 : 200,
-          backgroundColor: "#7EC8E3", // Azul claro
+          backgroundColor: "#f0f4f8",
           alignSelf: "flex-start",
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.1,
+          shadowRadius: 4,
+          elevation: 5, // Para Android
         },
         props.size === "big" && { maxWidth: 400 },
         props.heroStyle,
@@ -32,10 +37,10 @@ export default function TaskReminder(props: {
         style={[
           {
             flex: 1,
-            paddingHorizontal: 5,
+            paddingHorizontal: 15, // Ajustar padding
             justifyContent: "space-between",
-            borderRadius: 10, // Añadimos bordes redondeados
-            overflow: "hidden", // Ocultamos contenido que sobresale del borde
+            borderRadius: 15, // Bordes más redondeados
+            overflow: "hidden",
           },
           props.footerStyle,
         ]}
@@ -43,7 +48,7 @@ export default function TaskReminder(props: {
         <View>
           <View
             style={{
-              marginTop: props.size === "big" ? 20 : 3,
+              marginTop: props.size === "big" ? 20 : 10,
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
@@ -54,7 +59,7 @@ export default function TaskReminder(props: {
               style={[
                 styles.heroText,
                 {
-                  color: "#4A3A7C", // Violeta oscuro
+                  color: "#333", // Texto gris oscuro
                   fontSize: props.size === "big" ? 25 : 20,
                   lineHeight: 30,
                 },
@@ -62,20 +67,12 @@ export default function TaskReminder(props: {
             >
               {props.task.title}
             </Text>
-            <View style={styles.avatar}>
-              <Avatar.Icon
-                icon="account"
-                color="#4A3A7C" // Violeta oscuro
-                size={props.size === "big" ? 50 : 40}
-              />
-              <Text style={{ color: "#4A3A7C" }}>{props.task.author}</Text> {/* Violeta oscuro */}
-            </View>
           </View>
           <Text
             style={[
               baseStyles.baseText,
               {
-                color: "#4A3A7C", // Violeta oscuro
+                color: "#333", // Texto gris oscuro
                 minHeight: 40,
               },
             ]}
@@ -114,7 +111,7 @@ export function DateWithIcon(props: { date: Date }) {
   return (
     <View
       style={{
-        paddingVertical: 20,
+        paddingVertical: 15,
         flexDirection: "row-reverse",
         alignItems: "center",
         gap: 10,
@@ -122,12 +119,12 @@ export function DateWithIcon(props: { date: Date }) {
     >
       <Text
         style={{
-          color: "#4A3A7C", // Violeta oscuro
+          color: "#333", // Texto gris oscuro
         }}
       >
-        {props.date.toLocaleDateString("es-ES")} {/* Convertir a formato de fecha en español */}
+        {props.date.toLocaleDateString("es-ES")}
       </Text>
-      <IconButton icon="clock-outline" size={30} color="#4A3A7C" /> {/* Violeta oscuro */}
+      <IconButton icon="clock-outline" size={30} color="#333" /> {/* Gris oscuro */}
     </View>
   );
 }
@@ -137,19 +134,11 @@ const styles = ScaledSheet.create({
     marginTop: 20,
     marginLeft: 20,
     maxWidth: 385,
-    borderRadius: 10, // Bordes redondeados
+    borderRadius: 15, // Bordes más redondeados
+    padding: 10, // Ajustar padding
   },
   heroText: {
     fontWeight: "bold",
     fontSize: 20,
-  },
-  avatar: {
-    height: "auto",
-    marginTop: 15,
-    flexDirection: "row-reverse",
-    justifyContent: "flex-start",
-    gap: 5,
-    alignItems: "center",
-    paddingHorizontal: 20,
   },
 });

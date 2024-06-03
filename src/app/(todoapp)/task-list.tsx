@@ -31,39 +31,27 @@ export default function TodoList() {
     },
   ];
   return (
-      <View
-        style={{
-          paddingHorizontal: 5,
-          paddingVertical: 0,
-        }}
-      >
+      <View style={styles.container}>
         <List.Section>
           <SectionList
             sections={sections}
-            contentContainerStyle={style.content}
+            contentContainerStyle={styles.content}
             renderSectionHeader={({ section }) => (
               <>
                 <List.Subheader
                   style={[
-                    baseStyles.heading,
-                    baseStyles.subheading,
+                    styles.subheader,
                     {
-                      fontWeight: 800,
-                      marginTop: 0,
+                      fontWeight: 'bold',
                     },
                   ]}
                 >
                   {section.title}
                 </List.Subheader>
 
-                {section.data.length == 0 &&
-                  section.title == "Tareas para hoy" && (
-                    <TodoListEmpty title={"No hay tareas para hoy"} />
-                  )}
-                {section.data.length == 0 &&
-                  section.title == "Tareas para mañana" && (
-                    <TodoListEmpty title={"No hay tareas para mañana"} />
-                  )}
+                {section.data.length == 0 && (
+                  <TodoListEmpty title={`No hay tareas para ${section.title}`} />
+                )}
               </>
             )}
             renderItem={({ item }) => <TodoListItem task={item} />}
@@ -99,9 +87,20 @@ function TodoListEmpty(props: { title: string }) {
   );
 }
 
-const style = ScaledSheet.create({
+const styles = ScaledSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 5,
+    paddingVertical: 0,
+  },
   content: {
     padding: "10@s",
     paddingBottom: "90@s",
+  },
+  subheader: {
+    ...baseStyles.heading,
+    ...baseStyles.subheading,
+    marginTop: 0,
+    marginBottom: 10,
   },
 });
