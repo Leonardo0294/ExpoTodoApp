@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Proyecto completado",
+    "description": "",
+    "author": "Juan Pérez",
+    "date": "2024-06-03",
+    "priority": "Alta",
+    "status": "En progreso",
+    "category": "Informe"
+  },
+  {
+    "id": 2,
+    "title": "Reunión de equipo",
+    "description": "Organizar y llevar a cabo la reunión semanal del equipo para discutir actualizaciones y tareas del proyecto.",
+    "author": "Roberto Sánchez",
+    "date": "2024-05-26",
+    "priority": "Media",
+    "status": "Pendiente",
+    "category": "Reunión"
+  },
+  {
+    "id": 3,
+    "title": "Revisión de código",
+    "description": "Revisar los últimos commits de código y proporcionar retroalimentación al equipo de desarrollo.",
+    "author": "Carlos Rodríguez",
+    "date": "2024-05-27",
+    "priority": "Alta",
+    "status": "Completado",
+    "category": "Desarrollo"
+  },
+  {
+    "id": 4,
+    "title": "Presentación al cliente",
+    "description": "Preparar y entregar la presentación para la próxima reunión con el cliente.",
+    "author": "Diana Gómez",
+    "date": "2024-05-28",
+    "priority": "Alta",
+    "status": "Pendiente",
+    "category": "Presentación"
+  },
+  {
+    "id": 5,
+    "title": "Actualizar documentación",
+    "description": "Revisar la documentación técnica del proyecto para reflejar los cambios recientes.",
+    "author": "Eva Blanco",
+    "date": "2024-05-29",
+    "priority": "Media",
+    "status": "En progreso",
+    "category": "Documentación"
+  },
+  {
+    "id": 6,
+    "title": "Corrección de errores",
+    "description": "Identificar y resolver los errores reportados en la última versión del software.",
+    "author": "Francisco López",
+    "date": "2024-05-30",
+    "priority": "Alta",
+    "status": "En progreso",
+    "category": "Desarrollo"
+  },
+  {
+    "id": 7,
+    "title": "Diseño de nueva función",
+    "description": "Diseñar la nueva función solicitada por el cliente, incluyendo especificaciones y maquetas.",
+    "author": "Graciela León",
+    "date": "2024-06-01",
+    "priority": "Alta",
+    "status": "Pendiente",
+    "category": "Desarrollo"
+  },
+  {
+    "id": 8,
+    "title": "Pruebas de rendimiento",
+    "description": "Realizar pruebas de rendimiento para asegurar que el sistema cumpla con los estándares requeridos.",
+    "author": "Enrique Gómez",
+    "date": "2024-06-02",
+    "priority": "Media",
+    "status": "Pendiente",
+    "category": "Pruebas"
+  },
+  {
+    "id": 9,
+    "title": "Optimización de base de datos",
+    "description": "Optimizar las consultas de la base de datos para mejorar el rendimiento de la aplicación.",
+    "author": "Iván Verde",
+    "date": "2024-06-03",
+    "priority": "Alta",
+    "status": "Pendiente",
+    "category": "Desarrollo"
+  },
+  {
+    "id": 10,
+    "title": "Entrenamiento de usuarios",
+    "description": "Desarrollar y ofrecer sesiones de entrenamiento para usuarios finales sobre las nuevas características del sistema.",
+    "author": "Juanito Moreno",
+    "date": "2024-06-04",
+    "priority": "Media",
+    "status": "Pendiente",
+    "category": "Entrenamiento"
+  }
+]
