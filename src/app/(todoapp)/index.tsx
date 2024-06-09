@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; 
+import { View, TextInput, Text, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function LoginPage() {
   const navigation = useNavigation(); // Obtiene el objeto de navegación
 
   // Valores predefinidos para simular el inicio de sesión
-  const [username, setUsername] = useState('usuario');
-  const [email, setEmail] = useState('usuario@example.com');
-  const [password, setPassword] = useState('contraseña');
+  const [username, setUsername] = useState('leonardo');
+  const [email, setEmail] = useState('leo@live.com');
+  const [password, setPassword] = useState('Leonardo123');
   const [error, setError] = useState('');
 
   const handleLogin = () => {
@@ -40,51 +40,72 @@ export default function LoginPage() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>App de tareas</Text>
-      <Text style={styles.subtitle}>Inicio de Sesión</Text>
+    <ImageBackground 
+      source={{ uri: '  https://static.videezy.com/system/resources/thumbnails/000/055/044/original/dark-blue-bg-3.jpg' }} 
+      style={styles.background}
+    >
+      <View style={styles.container}>
+        <Image 
+          source={{ uri: 'https://example.com/path-to-your-logo.png' }} 
+          style={styles.logo} 
+        />
+        <Text style={styles.title}>App de tareas</Text>
+        <Text style={styles.subtitle}>Inicio de Sesión</Text>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Nombre de usuario"
-          value={username}
-          onChangeText={text => setUsername(text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Correo electrónico"
-          value={email}
-          onChangeText={text => setEmail(text)}
-          keyboardType="email-address"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Contraseña"
-          value={password}
-          onChangeText={text => setPassword(text)}
-          secureTextEntry
-        />
-        {error ? <Text style={styles.error}>{error}</Text> : null}
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Nombre de usuario"
+            value={username}
+            onChangeText={text => setUsername(text)}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Correo electrónico"
+            value={email}
+            onChangeText={text => setEmail(text)}
+            keyboardType="email-address"
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Contraseña"
+            value={password}
+            onChangeText={text => setPassword(text)}
+            secureTextEntry
+          />
+          {error ? <Text style={styles.error}>{error}</Text> : null}
+        </View>
+
+        <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+          <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
+        </TouchableOpacity>
       </View>
-
-      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-        <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
-      </TouchableOpacity>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
-    backgroundColor: '#f5f5f5', // Color de fondo claro
+    height: '100vh',  // Ajuste de la altura
+    overflowY: 'hidden', // Oculta el desplazamiento vertical
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo blanco semitransparente para el contenido
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    marginBottom: 20,
   },
   inputContainer: {
-    width: '40%', // Ancho ajustado
+    width: '30%', // Ancho ajustado
     paddingVertical: 30, // Espaciado vertical para agrandar el contenedor
     paddingHorizontal: 20,
     borderRadius: 10,
@@ -115,12 +136,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 10,
-    backgroundColor: '#fafafa', // Fondo gris claro
+    backgroundColor: '#fafafa', 
   },
   loginButton: {
-    width: '40%',
+    width: '30%',
     height: 45,
-    backgroundColor: '#3897f0', // Azul Instagram
+    backgroundColor: '#3897f0', 
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,

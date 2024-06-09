@@ -20,7 +20,7 @@ export default function TaskReminder(props: {
       style={[
         styles.hero,
         {
-          minHeight: props.size === "big" ? 240 : 200,
+          minHeight: props.size === "small" ? 100 : 250,
           backgroundColor: "#f0f4f8",
           alignSelf: "flex-start",
           shadowColor: "#000",
@@ -37,9 +37,8 @@ export default function TaskReminder(props: {
         style={[
           {
             flex: 1,
-            paddingHorizontal: 15, // Ajustar padding
+            paddingHorizontal: 7, // Ajustar padding
             justifyContent: "space-between",
-            borderRadius: 15, // Bordes más redondeados
             overflow: "hidden",
           },
           props.footerStyle,
@@ -48,7 +47,7 @@ export default function TaskReminder(props: {
         <View>
           <View
             style={{
-              marginTop: props.size === "big" ? 20 : 10,
+              marginTop: props.size === "small" ? 20 : 10,
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
@@ -60,7 +59,7 @@ export default function TaskReminder(props: {
                 styles.heroText,
                 {
                   color: "#333", // Texto gris oscuro
-                  fontSize: props.size === "big" ? 25 : 20,
+                  fontSize: props.size === "big" ? 10 : 10,
                   lineHeight: 30,
                 },
               ]}
@@ -72,22 +71,15 @@ export default function TaskReminder(props: {
             style={[
               baseStyles.baseText,
               {
-                color: "#333", // Texto gris oscuro
-                minHeight: 40,
+                color: "#555", // Texto gris oscuro
+                minHeight: 1,
               },
             ]}
           >
             {props.task.description}
           </Text>
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            paddingHorizontal: 10,
-          }}
-        >
+        <View>
           <DateWithIcon date={props.task.date} />
           <Button
             mode="contained"
@@ -96,7 +88,7 @@ export default function TaskReminder(props: {
                 pathname: `/tasks/${props.task.id}`,
               })
             }
-            style={{ backgroundColor: "#2D9CDB" }} // Azul brillante
+            style={{ backgroundColor: "#FF0000", marginTop: 1 }} // Rojo, con margen superior
             labelStyle={{ color: "#FFFFFF" }} // Texto blanco
           >
             Entrar a tarea
@@ -124,7 +116,7 @@ export function DateWithIcon(props: { date: Date }) {
       >
         {props.date.toLocaleDateString("es-ES")}
       </Text>
-      <IconButton icon="clock-outline" size={30} color="#333" /> {/* Gris oscuro */}
+      <IconButton icon="calendar" size={30} color="#333" /> {/* Gris oscuro */}
     </View>
   );
 }
@@ -134,11 +126,10 @@ const styles = ScaledSheet.create({
     marginTop: 20,
     marginLeft: 20,
     maxWidth: 385,
-    borderRadius: 15, // Bordes más redondeados
     padding: 10, // Ajustar padding
   },
   heroText: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 10,
   },
 });

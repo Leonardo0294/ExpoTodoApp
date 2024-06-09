@@ -94,12 +94,17 @@ export default function Layout() {
                   margin: "auto",
                   width: "50%",
                   height: "120%",
-                  borderRadius: 100,
+                  borderRadius: 10,
                   zIndex: 100,
                   marginBottom: 5,
                 }}
               >
-                <Text style={{ color: theme.colors.onPrimary }}>
+                <Text
+                  style={{ color: theme.colors.onPrimary }}
+                  onPress={() => {
+                    router.navigate("/add-task"); // Navegamos a la pantalla "add-task" al presionar el texto
+                  }}
+                >
                   Nueva tarea
                 </Text>
               </Surface>
@@ -130,6 +135,6 @@ export default function Layout() {
 // Definimos estilos para los iconos
 const styles = StyleSheet.create({
   iconStyle: {
-    marginHorizontal: 5, // Agregamos un margen horizontal para separar el icono del texto
+    marginHorizontal: 0, // Agregamos un margen horizontal para separar el icono del texto
   },
 });
